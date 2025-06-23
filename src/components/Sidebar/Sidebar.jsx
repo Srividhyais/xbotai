@@ -51,22 +51,25 @@ export default function Sidebar({ setChat, closeMenu }) {
           px={{ xs: 2, md: 3 }}
         >
           <Stack direction={"row"} gap={1} alignItems={"center"}>
-            <Box
-              component={"img"}
-              src={icon}
-              height={42}
-              width={42}
-              borderRadius={2}
-              boxShadow={4}
-              flexShrink={0}
-            />
-            <Typography
-              variant={"heading"}
-              fontSize={{ xs: 16, md: 20 }}
-              color={"text.primary"}
-            >
-              New Chat
-            </Typography>
+           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+      <Box
+        component={"img"}
+        src={icon}
+        height={42}
+        width={42}
+        borderRadius={2}
+        boxShadow={4}
+        flexShrink={0}
+      />
+      <Typography
+        variant={"heading"}
+        fontSize={{ xs: 16, md: 20 }}
+        color={"text.primary"}
+      >
+        New Chat
+      </Typography>
+    </Box>
+
           </Stack>
 
           <AddCommentIcon sx={{ color: "text.primary" }} />
