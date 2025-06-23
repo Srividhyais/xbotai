@@ -31,49 +31,43 @@ export default function Sidebar({ setChat, closeMenu }) {
         </Button>
       )}
 
-      <Link to={"/"} style={{ textDecoration: "none" }}>
-        <Stack
+       <Link to="/" style={{ textDecoration: "none" }}>
+        <Box
           onClick={() => {
             setChat([]);
             closeMenu();
           }}
           sx={{
             bgcolor: "primary.main",
-            "&:hover ": {
-              bgcolor: "primary.bg",
-            },
+            "&:hover": { bgcolor: "primary.bg" },
+            px: { xs: 2, md: 3 },
+            py: 2,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            cursor: "pointer",
           }}
-          direction={"row"}
-          spacing={1}
-          alignItems={"center"}
-          justifyContent={"space-between"}
-          py={2}
-          px={{ xs: 2, md: 3 }}
         >
-          <Stack direction={"row"} gap={1} alignItems={"center"}>
-           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-      <Box
-        component={"img"}
-        src={icon}
-        height={42}
-        width={42}
-        borderRadius={2}
-        boxShadow={4}
-        flexShrink={0}
-      />
-      <Typography
-        variant={"heading"}
-        fontSize={{ xs: 16, md: 20 }}
-        color={"text.primary"}
-      >
-        New Chat
-      </Typography>
-    </Box>
-
+          <Stack direction="row" gap={1} alignItems="center">
+            <Box
+              component="img"
+              src={icon}
+              height={42}
+              width={42}
+              borderRadius={2}
+              boxShadow={4}
+              flexShrink={0}
+            />
+            <Typography
+              variant="heading"
+              fontSize={{ xs: 16, md: 20 }}
+              color="text.primary"
+            >
+              New Chat
+            </Typography>
           </Stack>
-
           <AddCommentIcon sx={{ color: "text.primary" }} />
-        </Stack>
+        </Box>
       </Link>
 
       <Box p={{ xs: 2, md: 3 }}>
