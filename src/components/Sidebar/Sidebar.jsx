@@ -31,26 +31,28 @@ export default function Sidebar({ setChat, closeMenu }) {
         </Button>
       )}
 
-       <Link to="/" style={{ textDecoration: "none" }}>
-        <Box
+      <Link to={"/"} style={{ textDecoration: "none" }}>
+        <Stack
           onClick={() => {
             setChat([]);
             closeMenu();
           }}
           sx={{
             bgcolor: "primary.main",
-            "&:hover": { bgcolor: "primary.bg" },
-            px: { xs: 2, md: 3 },
-            py: 2,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            cursor: "pointer",
+            "&:hover ": {
+              bgcolor: "primary.bg",
+            },
           }}
+          direction={"row"}
+          spacing={1}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          py={2}
+          px={{ xs: 2, md: 3 }}
         >
-          <Stack direction="row" gap={1} alignItems="center">
+          <Stack direction={"row"} gap={1} alignItems={"center"}>
             <Box
-              component="img"
+              component={"img"}
               src={icon}
               height={42}
               width={42}
@@ -59,15 +61,16 @@ export default function Sidebar({ setChat, closeMenu }) {
               flexShrink={0}
             />
             <Typography
-              variant="heading"
+              variant={"heading"}
               fontSize={{ xs: 16, md: 20 }}
-              color="text.primary"
+              color={"text.primary"}
             >
               New Chat
             </Typography>
           </Stack>
+
           <AddCommentIcon sx={{ color: "text.primary" }} />
-        </Box>
+        </Stack>
       </Link>
 
       <Box p={{ xs: 2, md: 3 }}>
